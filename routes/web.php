@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('items.index');
 });
 
 Route::get('/test/{angka}', function($angka){
@@ -32,3 +32,15 @@ Route::post('/sapa', 'RegisterController@sapa_post');
 Route::get('/register', 'AuthController@register');
 
 Route::post('/welcome', 'AuthController@welcome');
+
+Route::get('/master', function(){
+    return view('adminlte.master');
+});
+
+Route::get('/items/create', function() {
+    return view('items.create');
+});
+
+Route::get('items/data-table', function() {
+    return view('items.data-table');
+});
