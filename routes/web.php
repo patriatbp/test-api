@@ -44,3 +44,17 @@ Route::get('/items/create', function() {
 Route::get('items/data-table', function() {
     return view('items.data-table');
 });
+
+Route::get('/posts', 'PostController@index');
+
+Route::post('/posts', 'PostController@store');
+
+Route::get('/posts/create', 'PostController@create');
+
+Route::get('/posts/{posts_id}', 'PostController@show');
+
+Route::get('/posts/{posts_id}/edit', 'PostController@edit');
+
+Route::put('/posts/{posts_id}', 'PostController@update');
+
+Route::delete('/posts/{posts_id}', 'PostController@destroy');
