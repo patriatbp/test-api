@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+    // Route::post('register', 'RegisterController');
+    // Route::post('login', 'LoginController');
+
+Route::get('/movies', 'MovieController@index');
+
+Route::post('/movies', 'MovieController@store');
+
+Route::get('/movies/{movies_id}', 'MovieController@show');
+
+Route::patch('/movies/{movies_id}', 'MovieController@update');
+
+Route::delete('/movies/{movies_id}', 'MovieController@destroy');
